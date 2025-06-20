@@ -23,7 +23,7 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone nithinreddyy/responsive-rag
 cd Responsive
 ```
 
