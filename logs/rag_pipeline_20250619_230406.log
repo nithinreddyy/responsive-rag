@@ -1,0 +1,92 @@
+2025-06-19 23:04:06 | INFO     | basic           | ================================================================================
+2025-06-19 23:04:06 | INFO     | basic           | RAG PIPELINE LOGGING STARTED
+2025-06-19 23:04:06 | INFO     | basic           | Log file: logs/rag_pipeline_20250619_230406.log
+2025-06-19 23:04:06 | INFO     | basic           | ================================================================================
+2025-06-19 23:04:18 | INFO     | basic           | RAG Pipeline initialized successfully
+2025-06-19 23:04:18 | INFO     | basic           | ============================================================
+2025-06-19 23:04:18 | INFO     | basic           | DOCUMENT PROCESSING STARTED
+2025-06-19 23:04:18 | INFO     | basic           | Total documents to process: 1
+2025-06-19 23:04:18 | INFO     | basic           | ============================================================
+2025-06-19 23:04:18 | INFO     | basic           | [1/1] Processing: Dxb to Mad.pdf
+2025-06-19 23:04:18 | INFO     | basic           |    File path: uploads\Dxb to Mad.pdf
+2025-06-19 23:04:18 | INFO     | basic           |    File size: 390.4 KB
+2025-06-19 23:04:18 | INFO     | basic           |    Opening PDF: Dxb to Mad.pdf
+2025-06-19 23:04:18 | INFO     | basic           |    PDF has 1 pages
+2025-06-19 23:04:18 | INFO     | basic           |    Processing Dxb to Mad.pdf - Page 1/1
+2025-06-19 23:04:18 | INFO     | basic           | Found 1 substantial images in page
+2025-06-19 23:04:18 | INFO     | basic           | Saved extracted embedded image: extracted_images\Dxb to Mad_pdf_page_0_image_0.png
+2025-06-19 23:04:32 | INFO     | httpx           | HTTP Request: POST https://magicplatform-gpt4-o-gs-test-canadaeast.openai.azure.com/openai/deployments/MagicPlatform-GPT4-O-GS-Test/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-19 23:04:33 | INFO     | basic           | Created summary for extracted image 0: (2380, 3372)
+2025-06-19 23:04:33 | INFO     | basic           |       Page 1: Found images (1 summaries)
+2025-06-19 23:04:33 | INFO     | basic           |    Document Summary for Dxb to Mad.pdf:
+2025-06-19 23:04:33 | INFO     | basic           |       Total pages: 1
+2025-06-19 23:04:33 | INFO     | basic           |       Pages with text only: 0
+2025-06-19 23:04:33 | INFO     | basic           |       Pages with images only: 1
+2025-06-19 23:04:33 | INFO     | basic           |       Pages with both text and images: 0
+2025-06-19 23:04:33 | INFO     | basic           |       Total text chunks: 0
+2025-06-19 23:04:33 | INFO     | basic           |       Total image chunks: 1
+2025-06-19 23:04:33 | INFO     | basic           |       Total chunks generated: 1
+2025-06-19 23:04:33 | INFO     | basic           |    SUCCESS: Dxb to Mad.pdf processed in 14.64s
+2025-06-19 23:04:33 | INFO     | basic           |    Generated 1 chunks from Dxb to Mad.pdf
+2025-06-19 23:04:33 | INFO     | basic           |    Total chunks so far: 1
+2025-06-19 23:04:33 | INFO     | basic           | ----------------------------------------
+2025-06-19 23:04:33 | INFO     | basic           | ============================================================
+2025-06-19 23:04:33 | INFO     | basic           | DOCUMENT PROCESSING COMPLETED
+2025-06-19 23:04:33 | INFO     | basic           | Successfully processed: 1 documents
+2025-06-19 23:04:33 | INFO     | basic           | Total chunks generated: 1
+2025-06-19 23:04:33 | INFO     | basic           | Documents with visual content: 1
+2025-06-19 23:04:33 | INFO     | basic           | ============================================================
+2025-06-19 23:04:33 | INFO     | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-19 23:04:34 | INFO     | httpx           | HTTP Request: POST https://magicplatform-textembedding-3-small-test-canadaeast.openai.azure.com/openai/deployments/MagicPlatform-TextEmbedding-3-Small-Test/embeddings?api-version=2024-10-01-preview "HTTP/1.1 200 OK"
+2025-06-19 23:04:45 | INFO     | basic           | ============================================================
+2025-06-19 23:04:45 | INFO     | basic           | QUERY PROCESSING STARTED
+2025-06-19 23:04:45 | INFO     | basic           | Query: hey, whats the passenger name
+2025-06-19 23:04:45 | INFO     | basic           | Parameters: fetch_k=50, rerank_k=10, use_reranker=True
+2025-06-19 23:04:45 | INFO     | basic           | ============================================================
+2025-06-19 23:04:45 | INFO     | basic           | Step 1: Initial Retrieval
+2025-06-19 23:04:46 | INFO     | httpx           | HTTP Request: POST https://magicplatform-textembedding-3-small-test-canadaeast.openai.azure.com/openai/deployments/MagicPlatform-TextEmbedding-3-Small-Test/embeddings?api-version=2024-10-01-preview "HTTP/1.1 200 OK"
+2025-06-19 23:04:46 | INFO     | basic           | Retrieved 1 documents from vector store (fetch_k=50)
+2025-06-19 23:04:46 | INFO     | basic           | Step 2: Cohere Reranking
+2025-06-19 23:04:46 | INFO     | basic           | Sending 1 documents to Cohere reranker...
+2025-06-19 23:04:46 | INFO     | basic           | Reranked to top 1 documents (rerank_k=10)
+2025-06-19 23:04:46 | INFO     | basic           | Rerank Scores:
+2025-06-19 23:04:46 | INFO     | basic           |       Rank 1: Score 0.0049 | Dxb to Mad.pdf (Page 0) | [EXTRACTED IMAGE SUMMARY] The image is a boarding pass for an Emirates flight, p...
+2025-06-19 23:04:46 | INFO     | basic           | Step 3: Context Preparation
+2025-06-19 23:04:46 | INFO     | basic           | Context length: 2000 characters
+2025-06-19 23:04:46 | INFO     | basic           | Context preview: [EXTRACTED IMAGE SUMMARY] The image is a boarding pass for an Emirates flight, providing detailed travel information for the passenger, Nithinreddy Jaidi. Here is a comprehensive summary of its conten...
+2025-06-19 23:04:48 | INFO     | httpx           | HTTP Request: POST https://magicplatform-gpt4-o-gs-test-canadaeast.openai.azure.com/openai/deployments/MagicPlatform-GPT4-O-GS-Test/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-19 23:04:48 | INFO     | basic           | Step 3: LLM Answer Generation
+2025-06-19 23:04:48 | INFO     | basic           | Generated Answer:
+2025-06-19 23:04:48 | INFO     | basic           |    The passenger name is Nithinreddy Jaidi.
+2025-06-19 23:04:48 | INFO     | basic           | ============================================================
+2025-06-19 23:04:48 | INFO     | basic           | QUERY PROCESSING COMPLETED
+2025-06-19 23:04:48 | INFO     | basic           | Generated answer with 1 context chunks
+2025-06-19 23:04:48 | INFO     | basic           | Primary sources: 1
+2025-06-19 23:04:48 | INFO     | basic           | Visual citations: 0
+2025-06-19 23:04:48 | INFO     | basic           | ============================================================
+2025-06-19 23:04:52 | INFO     | basic           | ============================================================
+2025-06-19 23:04:52 | INFO     | basic           | QUERY PROCESSING STARTED
+2025-06-19 23:04:52 | INFO     | basic           | Query: what's the destination and seat no
+2025-06-19 23:04:52 | INFO     | basic           | Parameters: fetch_k=50, rerank_k=10, use_reranker=True
+2025-06-19 23:04:52 | INFO     | basic           | ============================================================
+2025-06-19 23:04:52 | INFO     | basic           | Step 1: Initial Retrieval
+2025-06-19 23:04:53 | INFO     | httpx           | HTTP Request: POST https://magicplatform-textembedding-3-small-test-canadaeast.openai.azure.com/openai/deployments/MagicPlatform-TextEmbedding-3-Small-Test/embeddings?api-version=2024-10-01-preview "HTTP/1.1 200 OK"
+2025-06-19 23:04:53 | INFO     | basic           | Retrieved 1 documents from vector store (fetch_k=50)
+2025-06-19 23:04:53 | INFO     | basic           | Step 2: Cohere Reranking
+2025-06-19 23:04:53 | INFO     | basic           | Sending 1 documents to Cohere reranker...
+2025-06-19 23:04:53 | INFO     | basic           | Reranked to top 1 documents (rerank_k=10)
+2025-06-19 23:04:53 | INFO     | basic           | Rerank Scores:
+2025-06-19 23:04:53 | INFO     | basic           |       Rank 1: Score 0.0009 | Dxb to Mad.pdf (Page 0) | [EXTRACTED IMAGE SUMMARY] The image is a boarding pass for an Emirates flight, p...
+2025-06-19 23:04:53 | INFO     | basic           | Step 3: Context Preparation
+2025-06-19 23:04:53 | INFO     | basic           | Context length: 2000 characters
+2025-06-19 23:04:53 | INFO     | basic           | Context preview: [EXTRACTED IMAGE SUMMARY] The image is a boarding pass for an Emirates flight, providing detailed travel information for the passenger, Nithinreddy Jaidi. Here is a comprehensive summary of its conten...
+2025-06-19 23:04:55 | INFO     | httpx           | HTTP Request: POST https://magicplatform-gpt4-o-gs-test-canadaeast.openai.azure.com/openai/deployments/MagicPlatform-GPT4-O-GS-Test/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-19 23:04:55 | INFO     | basic           | Step 3: LLM Answer Generation
+2025-06-19 23:04:55 | INFO     | basic           | Generated Answer:
+2025-06-19 23:04:55 | INFO     | basic           |    The destination is Madrid (MAD) and the seat number is 64K.
+2025-06-19 23:04:55 | INFO     | basic           | ============================================================
+2025-06-19 23:04:55 | INFO     | basic           | QUERY PROCESSING COMPLETED
+2025-06-19 23:04:55 | INFO     | basic           | Generated answer with 1 context chunks
+2025-06-19 23:04:55 | INFO     | basic           | Primary sources: 1
+2025-06-19 23:04:55 | INFO     | basic           | Visual citations: 0
+2025-06-19 23:04:55 | INFO     | basic           | ============================================================
