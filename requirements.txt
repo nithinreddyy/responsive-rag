@@ -1,0 +1,34 @@
+# LangChain Framework
+langchain==0.3.25
+langchain-community==0.3.25
+langchain-openai==0.3.24
+langchain-text-splitters==0.3.8
+
+# Document Processing
+PyMuPDF==1.26.1                    # PDF processing with PyMuPDF/fitz
+python-docx==1.2.0                 # Word document processing
+python-pptx==1.0.2                 # PowerPoint processing
+openpyxl==3.1.5                    # Excel file processing
+pdf2image==1.17.0                  # PDF to image conversion
+
+# Vector Store & Embeddings
+chromadb==1.0.12                   # Vector database
+sentence-transformers==2.2.2       # Embedding models
+
+# Reranking
+cohere==4.52                       # Cohere reranking API
+
+# Image Processing & Vision
+pillow==11.2.1                     # Image processing
+opencv-python==4.11.0.86           # Computer vision
+
+# Environment & Configuration
+python-dotenv==1.1.0               # Environment variables
+
+# Core Data Processing
+torch==2.7.1                       # PyTorch (required by sentence-transformers)
+numpy==1.26.4                      # Numerical computing
+pandas==2.3.0                      # Data manipulation
+
+# Optional: Streamlit (if using the web interface)
+streamlit==1.46.0
