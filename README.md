@@ -233,6 +233,10 @@ Example log output:
 
 ![Streamlit UI](Streamlit%20UI.PNG)
 
+## Below is the link to the video where I explained the codebase and how to run it
+
+https://drive.google.com/file/d/1hoITWi7Fa7FkbMowgtYoP8ez2Pb1tld1/view?usp=sharing
+
 ---
 
 **Built using Azure OpenAI, Cohere, and Streamlit** 
